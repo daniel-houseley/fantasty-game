@@ -52,3 +52,22 @@ client/
 - `POST /api/games/:id/join` - Join existing game
 - `POST /api/games/:id/submit` - Submit player build
 - `GET /api/games/:id` - Get game state
+
+## Deployment
+
+### Backend (Railway)
+1. Create a new Railway project
+2. Connect your GitHub repo or deploy from the `/server` directory
+3. Railway will auto-detect Node.js and use `npm start`
+4. Set the root directory to `/server` in Railway settings
+5. Copy your Railway URL (e.g., `https://your-app.railway.app`)
+
+### Frontend (Vercel)
+1. Create a new Vercel project from the `/client` directory
+2. Set the environment variable:
+   - `VITE_API_URL` = `https://your-railway-app.railway.app/api`
+3. Deploy
+
+### Environment Variables
+- **Client**: `VITE_API_URL` - Full URL to the backend API (e.g., `https://your-app.railway.app/api`)
+- **Server**: `PORT` - Automatically set by Railway
